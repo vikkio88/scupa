@@ -12,18 +12,26 @@ include_directories(
 ) 
 
 set(APP_SOURCES src/main.cpp)
-set(LIB_SOURCES 
+set(MAZZU_LIB_SOURCES 
   include/mazzu/Card.cpp
   include/mazzu/Deck.cpp
 )
 
-# creates ./build/bin/runner
+set(LACU_LIB_SOURCES 
+  include/lacu/helpers.cpp
+)
+
+# creates ./build/bin/APP
 add_executable(${PROJECT_NAME} ${APP_SOURCES})
 
 # shared library
-set(LIBRARY_NAME Mazzu)
-add_library(${LIBRARY_NAME} SHARED ${LIB_SOURCES})
-target_link_libraries(${PROJECT_NAME} ${LIBRARY_NAME})
+set(MAZZU_LIBRARY_NAME Mazzu)
+set(LACU_LIBRARY_NAME Lacu)
+
+add_library(${MAZZU_LIBRARY_NAME} SHARED ${MAZZU_LIB_SOURCES})
+add_library(${LACU_LIBRARY_NAME} SHARED ${LACU_LIB_SOURCES})
+
+target_link_libraries(${PROJECT_NAME} ${MAZZU_LIBRARY_NAME} ${LACU_LIBRARY_NAME})
 
 # Tests
 Include(FetchContent)

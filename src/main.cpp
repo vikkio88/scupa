@@ -1,3 +1,5 @@
+#include "lacu/helpers.hpp"
+
 #include "mazzu/Card.hpp"
 #include "mazzu/Suit.hpp"
 #include "mazzu/Deck.hpp"
@@ -9,8 +11,8 @@ using std::vector;
 
 int main()
 {
+  lacu::cls(std::cout);
   mazzu::Deck deck;
-
   deck.shuffle();
 
   std::cout << "cards in deck: " << deck.getCardsLeft() << std::endl;
