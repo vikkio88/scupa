@@ -22,6 +22,7 @@ namespace mazzu
         int getDiscarded();
 
         void shuffle();
+        vector<Card *> draw();
         vector<Card *> draw(int);
         void discard(Card *);
     };

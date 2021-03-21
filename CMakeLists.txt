@@ -43,7 +43,7 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(Catch2)
 
-add_executable(tests tests/test.cpp)
+add_executable(tests EXCLUDE_FROM_ALL tests/test.cpp)
 target_link_libraries(tests PRIVATE Catch2::Catch2 ${LIBRARY_NAME})
 list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/contrib)
 include(CTest)

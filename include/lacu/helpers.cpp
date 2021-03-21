@@ -1,10 +1,10 @@
 #include "lacu/helpers.hpp"
-#include <ostream>
+#include <iostream>
 
 namespace lacu
 {
-    void cls(std::ostream& o)
+    void cls()
     {
-        o << CLEAR_SCREEN;
+        std::cout << CLEAR_SCREEN;
     }
 }

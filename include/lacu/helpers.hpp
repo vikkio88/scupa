@@ -5,5 +5,5 @@
 namespace lacu
 {
     const char *CLEAR_SCREEN = "\033[2J\033[1;1H";
-    void cls(std::ostream& o);
+    void cls();
 }

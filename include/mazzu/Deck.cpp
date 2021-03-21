@@ -31,9 +31,17 @@ namespace mazzu
         std::shuffle(m_Deck.begin(), m_Deck.end(), rng);
     }
 
+    vector<Card *> Deck::draw()
+    {
+        return draw(1);
+    }
+
     vector<Card *> Deck::draw(int cards = 1)
     {
         vector<Card *> drawnCards;
+        if (m_Deck.size() < cards)
+            return drawnCards;
+
         for (int i = 0; i < cards; i++)
         {
             Card *c = m_Deck.back();
