@@ -15,7 +15,6 @@ namespace mazzu
   public:
     Card(int, Suit);
     std::string toString();
-    static std::string suitToString(Suit suit);
   };
 
 }

@@ -10,28 +10,9 @@ namespace mazzu
   std::string Card::toString()
   {
     std::stringstream ss;
-    ss << m_Value << ", " << Card::suitToString(m_Suit);
+    ss << m_Value << ", " << suitNames[m_Suit];
 
     return ss.str();
-  }
-
-  std::string Card::suitToString(Suit suit)
-  {
-    switch (suit)
-    {
-    case Suit::DENARI:
-      return "Denari";
-    case Suit::SPADE:
-      return "Spade";
-    case Suit::MAZZE:
-      return "Mazze";
-    case Suit::COPPE:
-      return "Coppe";
-    default:
-      break;
-    }
-
-    return "No Suit";
   }
 
 }
